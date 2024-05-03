@@ -1,6 +1,10 @@
 data "aws_security_group" "cloud9_secgroup" {
-    id =    aws_cloud9_environment_ec2.cloud9_instance.id
-
+    filter {
+    name = "tag:aws:cloud9:environment"
+        values = [
+          aws_cloud9_environment_ec2.cloud9_instance.id
+        ]
+    }
 }
 resource "aws_security_group_rule" "tcp_8080" {
     type              = "ingress"
