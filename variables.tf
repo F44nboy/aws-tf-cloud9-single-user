@@ -17,7 +17,3 @@ variable "region" {
     default = "us-east-1"
     description = "Region of the resources"
 }
-
-variable "cloud9_owner_arn" {
-  description = "Owner ARN of the cloud9 instance owner"
-}
